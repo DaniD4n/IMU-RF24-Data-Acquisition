@@ -4,7 +4,7 @@ This project implements a wireless IMU acquisition system using:
 
 - Arduino + nRF24L01
 - Binary custom protocol
-- Python real-time visualization with matplotlib
+- Python real-time visualization with Matplotlib
 
 ## Features
 
