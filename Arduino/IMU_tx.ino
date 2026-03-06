@@ -59,24 +59,11 @@ void setup() {
   Serial.println("TX Ready");
 }
 
-
-
-//SAMPLE CONTROL ===
-const uint32_t Ts = 4000; //4000 us = 250 Hz
-uint32_t last_time = 0;
-
 void loop() {
-  // loop a tempo fixo
   uint32_t now = micros();
-  if (now - last_time >= Ts) {
-
-    last_time += Ts;
-    IMUData data;
-    data.timestamp = now;
-
-    readIMU(&data);
-
-    radio.write(&data, sizeof(data)); 
-    println(data) // <- apenas para debugging
-  }
+  IMUData data;
+  data.timestamp = now;
+  readIMU(&data);
+  radio.write(&data, sizeof(data)); 
+  delay(25);
 }
